@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node.js (Client)
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python (Server)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# Django
+db.sqlite3
+media/
+staticfiles/
+*.sqlite3
+*.db
+*.sqlite
+
+# Editor/OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+git rm -r --cached .
