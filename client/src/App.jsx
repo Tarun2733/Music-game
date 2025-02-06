@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <h1>Welcome to Music Game</h1>
       <button onClick={() => setShowTextJoin(!showTextJoin)}>Join Room</button>
-      <button onClick={() => setShowTextCreate(!showTextCreate)}>Create Room</button>
+      <button onClick={() => setShowTextCreate(!showTextCreate) }>Create Room</button>
       {showTextJoin && <JoinRoom />}
       {showTextCreate && <CreateRoom />}
     </div>
