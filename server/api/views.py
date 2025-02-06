@@ -19,3 +19,17 @@ def create_room(request):
             serializer.save()  # Save the room and generate a room code
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+def join_room(request):
+    room_code = request.data.get('room_code')  # Get the room code from the request
+
+    if not room_code:
+        return Response({"error": "Room code is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Check if the room exists in the database
+    try:
+        room = Room.objects.get(room_code=room_code)
+        return Response({"message": "Successfully joined the room", "room_code": room.room_code}, status=status.HTTP_200_OK)
+    except Room.DoesNotExist:
+        return Response({"error": "Invalid room code"}, status=status.HTTP_404_NOT_FOUND)
